@@ -51,3 +51,28 @@ const calculateBalances = (paymentsList) => {
 }
 
 console.log(calculateBalances(payments))
+
+// Write a program that takes in two arrays as argument with one array having more integers and return the extra integers.
+// Sample Input: [1,2,3,34,56,83], [3,2,56]
+// Expected Output: [1,34,83]
+
+// loop through one of those arrays, check if each value in that array is in the other array. if it's there, then skip, if it's not, then save that value in an array to return later
+
+
+const getArrayDifferences = (arrayA, arrayB) => {
+	// const extraIntegerA = arrayA.filter((0) => arrayB.indexOf(0)== -1);
+	// return extraIntegerA==
+
+	// const extraIntegers = []
+
+	// for (let i = 0; i < arrayA.length; i++) {
+	// 	const integer = arrayA[i]
+	// 	const valueExists = arrayB.find(val => val === integer)
+
+	// 	if (!valueExists) {
+	// 		extraIntegers.push(integer)
+	// 	}
+	// }
+
+	return arrayA.filter(val => arrayB.find(val2 => val !== val2))
+}
