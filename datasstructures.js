@@ -135,7 +135,7 @@ function noSpace(x) {
             newStr += x[i]
         }
     }
-    return newStr
+    return newSt
 }
 
 // find multiples of three and Five
