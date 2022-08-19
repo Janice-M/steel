@@ -192,3 +192,17 @@ function isPangram(string){
 //Return your answer as a number.
 
 // one
+function sumMix(x){
+  let result = 0;
+  for (let n of x) {
+    result += parseInt(n);
+  }
+  return result;
+
+}
+
+// two better imo
+
+function sumMix(x){
+  return x.reduce((x, y) => Number(x) + Number(y), 0);
+}
