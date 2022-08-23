@@ -245,3 +245,7 @@ PaginationHelper.prototype.pageIndex = function(itemIndex) {
   
   return Math.ceil((itemIndex + 1)/this.itemsPerPage) - 1;
 }
+
+// Small enough? - Beginner 7kyu
+
+const smallEnough = (a, limit) => !a.some((e) => e > limit);
