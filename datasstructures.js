@@ -257,3 +257,8 @@ function smallEnough(a, limit){
 }
 
 smallEnough = (a, l) => a.every(e => e <= l)
+
+function smallEnough(a, limit){
+  return a.every(x => x <= limit);
+}
+
