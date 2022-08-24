@@ -326,3 +326,10 @@ function splitIntoRanges(ranges, number) {
 function convertToRange(range) {
   return range.length < 3 ? range.join(",") : range[0] + "-" + range[range.length - 1];
 }
+
+solution = (list)=>list.reduce((acc,curr,i) => {
+  if (i==0) return curr.toString();
+  if (list[i-1] == curr-1 && list[i+1] == curr+1) return acc;
+  if (list[i-2] == curr-2 && list[i-1] == curr-1) return acc+"-"+curr;
+  return acc+","+curr;
+});
