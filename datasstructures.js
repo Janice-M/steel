@@ -255,3 +255,5 @@ const smallEnough = (a, limit) => !a.some((e) => e > limit);
 function smallEnough(a, limit){
   return Math.max(...a) <= limit
 }
+
+smallEnough = (a, l) => a.every(e => e <= l)
