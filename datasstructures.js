@@ -249,3 +249,9 @@ PaginationHelper.prototype.pageIndex = function(itemIndex) {
 // Small enough? - Beginner 7kyu
 
 const smallEnough = (a, limit) => !a.some((e) => e > limit);
+
+// best practice 
+
+function smallEnough(a, limit){
+  return Math.max(...a) <= limit
+}
