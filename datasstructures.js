@@ -333,3 +333,27 @@ solution = (list)=>list.reduce((acc,curr,i) => {
   if (list[i-2] == curr-2 && list[i-1] == curr-1) return acc+"-"+curr;
   return acc+","+curr;
 });
+
+
+// Nesting structure comparison 4kyu
+
+Array.prototype.sameStructureAs = function (other) {
+  // Return 'true' if and only if 'other' has the same
+  // nesting structure as 'this'.
+
+  // Note: You are given a function isArray(o) that returns
+  // whether its argument is an array.
+  if (this.length !== other.length) {
+    return false;
+  }
+  for (var i = 0; i < this.length; i++) {
+    if (isArray(this[i]) && isArray(other[i])) {
+      if (!this[i].sameStructureAs(other[i])) { return false; }
+    } else if (!isArray(this[i]) && isArray(other[i])) {
+      return false;
+    } else if (isArray(this[i]) && !isArray(other[i])) {
+      return false;
+    }
+  }
+  return true
+};
