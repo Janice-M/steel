@@ -401,3 +401,10 @@ function dirReduc(arr){
   const opposites = {'NORTH': 'SOUTH', 'EAST': 'WEST', 'SOUTH': 'NORTH', 'WEST': 'EAST'};
   return arr.reduce((acc, cur) => (opposites[acc.slice(-1)] === cur ? acc.pop() : acc.push(cur), acc), [])
 }
+
+/*
+Complete the function scramble(str1, str2) that returns true if a portion of str1 characters 
+can be rearranged to match str2, otherwise returns false.
+*/
+
+//less efficient:
