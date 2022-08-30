@@ -641,13 +641,48 @@ function longestSlideDown (pyramid) {
   ))[0];
 }
 
-/* Range Extraction 4kyu 
+/*
+Remove Zeros 4KYU
 
-A format for expressing an ordered list of integers is to use a comma separated list of either
-individual integers
-or a range of integers denoted by the starting integer separated from the end integer in the range by a dash, '-'. The range includes all integers in the interval including both endpoints. It is not considered a range unless it spans at least 3 numbers. For example ("12, 13, 15-17")
-Complete the solution so that it takes a list of integers in increasing order and returns a correctly formatted string in the range format.
-Example:
-solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]);
-// returns "-6,-3-1,3-5,7-11,14,15,17-20"
+Description:
+Write a function that takes an array of values and moves all elements that are zero to the end of the array, otherwise preserving the order of the array. The zero elements must also maintain the order in which they occurred.
+For example, the following array
+[7, 2, 3, 0, 4, 6, 0, 0, 13, 0, 78, 0, 0, 19, 14]
+is transformed into
+[7, 2, 3, 4, 6, 13, 78, 19, 14, 0, 0, 0, 0, 0, 0]
+Zero elements are defined by either 0 or "0". Some tests may include elements that are not number literals.
+You are NOT allowed to use any temporary arrays or objects. You are also not allowed to use any Array.prototype or Object.prototype methods.
 */
+
+const calcFu = (x)=> (i)=> {return Math.abs(x - ((i+x) % (x*2)));};
+
+function encodeRailFenceCipher(string, numberRails) {
+  if (string.length === 0) return "";
+  let fence = Array.from(Array(numberRails), () => new Array());
+  let calcFu_i = calcFu(numberRails-1);
+  
+  [...string].forEach((c,i)=>{
+    fence[calcFu_i(i)].push(c)
+  })
+  return fence.reduce((acc,c)=>{
+    return acc + c.join('');
+  },'');
+}
+
+function decodeRailFenceCipher(string, numberRails) {
+  let fence_tot = Array(numberRails).fill(0);
+  let fence = Array.from(Array(numberRails), () => new Array());
+  let calcFu_i = calcFu(numberRails-1);
+  let appo = [...string];
+  appo.forEach((c,i)=>{
+    fence_tot[calcFu_i(i)] += 1; 
+  });
+  fence_tot.forEach((tot,i)=>{
+    fence[i] = appo.splice(0, tot);
+  });
+  let res = "";
+  for (let i = 0; i < string.length; i++) {
+    res += fence[calcFu_i(i)].shift();
+  }
+  return res;
+}
