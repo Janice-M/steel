@@ -653,8 +653,7 @@ The encoded string would be:
 WECRLTEERDSOEEFEAOCAIVDEN
 Write a function/method that takes 2 arguments, a string and the number of rails, and returns the ENCODED string.
 Write a second function/method that takes 2 arguments, an encoded string and the number of rails, and returns the DECODED string.
-For both encoding and decoding, assume number of rails >= 2 and that passing an empty string will return an empty string.
-
+For both encoding and decoding, assume number of rails >= 2 and that passing an empty string will return an empty string. */
 
 const calcFu = (x)=> (i)=> {return Math.abs(x - ((i+x) % (x*2)));};
 
