@@ -515,7 +515,7 @@ function getGeneration(cells, generations){
 }
 
 /* 
-UP AND DOWN 6KYU
+Powers of 2 8kyu
 
 Don't be afraid, the description is rather long but - hopefully - it is in order that the process be well understood.
 
