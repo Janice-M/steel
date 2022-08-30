@@ -513,3 +513,7 @@ function getGeneration(cells, generations){
 
   return ce;
 }
+
+/* 
+UP AND DOWN 6KYU
+ */
