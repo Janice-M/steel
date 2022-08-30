@@ -620,7 +620,7 @@ const test = (n, xs) => n > 99 &&
 const isInteresting = (n, xs) =>
   test(n, xs) ? 2 : +(test(n + 1, xs) || test(n + 2, xs))
 
-  /* pyramid slide down 
+  /* rail fence encoding 3kyu
   Let's say that the 'slide down' is the maximum sum of consecutive numbers from the top to the bottom of the pyramid. As you can see, the longest 'slide down' is 3 + 7 + 4 + 9 = 23
 
 Your task is to write a function that takes a pyramid representation as argument and returns its' largest 'slide down'. For example:
@@ -644,15 +644,17 @@ function longestSlideDown (pyramid) {
 /*
 Remove Zeros 4KYU
 
-Description:
-Write a function that takes an array of values and moves all elements that are zero to the end of the array, otherwise preserving the order of the array. The zero elements must also maintain the order in which they occurred.
-For example, the following array
-[7, 2, 3, 0, 4, 6, 0, 0, 13, 0, 78, 0, 0, 19, 14]
-is transformed into
-[7, 2, 3, 4, 6, 13, 78, 19, 14, 0, 0, 0, 0, 0, 0]
-Zero elements are defined by either 0 or "0". Some tests may include elements that are not number literals.
-You are NOT allowed to use any temporary arrays or objects. You are also not allowed to use any Array.prototype or Object.prototype methods.
-*/
+DCreate two functions to encode and then decode a string using the Rail Fence Cipher. This cipher is used to encode a string by placing each character successively in a diagonal along a set of "rails". First start off moving diagonally and down. When you reach the bottom, reverse direction and move diagonally and up until you reach the top rail. Continue until you reach the end of the string. Each "rail" is then read left to right to derive the encoded string. You can optionally include or dis-include punctuation.
+For example, the string "WEAREDISCOVEREDFLEEATONCE" could be represented in a three rail system as follows:
+W       E       C       R       L       T       E
+  E   R   D   S   O   E   E   F   E   A   O   C  
+    A       I       V       D       E       N    
+The encoded string would be:
+WECRLTEERDSOEEFEAOCAIVDEN
+Write a function/method that takes 2 arguments, a string and the number of rails, and returns the ENCODED string.
+Write a second function/method that takes 2 arguments, an encoded string and the number of rails, and returns the DECODED string.
+For both encoding and decoding, assume number of rails >= 2 and that passing an empty string will return an empty string.
+
 
 const calcFu = (x)=> (i)=> {return Math.abs(x - ((i+x) % (x*2)));};
 
