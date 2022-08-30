@@ -620,7 +620,7 @@ const test = (n, xs) => n > 99 &&
 const isInteresting = (n, xs) =>
   test(n, xs) ? 2 : +(test(n + 1, xs) || test(n + 2, xs))
 
-  /* rail fence encoding 3kyu
+  /* 
   Let's say that the 'slide down' is the maximum sum of consecutive numbers from the top to the bottom of the pyramid. As you can see, the longest 'slide down' is 3 + 7 + 4 + 9 = 23
 
 Your task is to write a function that takes a pyramid representation as argument and returns its' largest 'slide down'. For example:
@@ -642,7 +642,7 @@ function longestSlideDown (pyramid) {
 }
 
 /*
-Remove Zeros 4KYU
+rail fence encoding 3kyu
 
 DCreate two functions to encode and then decode a string using the Rail Fence Cipher. This cipher is used to encode a string by placing each character successively in a diagonal along a set of "rails". First start off moving diagonally and down. When you reach the bottom, reverse direction and move diagonally and up until you reach the top rail. Continue until you reach the end of the string. Each "rail" is then read left to right to derive the encoded string. You can optionally include or dis-include punctuation.
 For example, the string "WEAREDISCOVEREDFLEEATONCE" could be represented in a three rail system as follows:
